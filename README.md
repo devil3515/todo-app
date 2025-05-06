@@ -3,8 +3,6 @@
 
 A full-stack task management application built with Django REST Framework, PostgreSQL, and a modern React + TypeScript frontend.
 
-<!-- ![App Screenshot](https://via.placeholder.com/800x500?text=Todo+App+Screenshot) Replace with actual screenshot -->
-
 ## 🚀 Features
 
 - ✅ User authentication (Register/Login/Logout)
@@ -174,5 +172,7 @@ This project is licensed under the MIT License.
 
 <!-- Replace with actual screenshots -->
 - **Login Screen**
+![App Screenshot](https://github.com/devil3515/todo-app/blob/main/Screenshots/loginScreen.png)
 - **Task List**
-- **Task Form**
+![App Screenshot](https://github.com/devil3515/todo-app/blob/main/Screenshots/taskList.png)
+
