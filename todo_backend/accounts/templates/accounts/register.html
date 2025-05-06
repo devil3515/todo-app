@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Register</h2>
+  
+  {% if registration_success %}
+    <div id="success-popup" class="popup">
+      Registration successful! <a href="{% url 'accounts:login' %}">Click here to login</a>
+    </div>
+  {% endif %}
+  
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+  </form>
+
+  <style>
+    .popup {
+      background: #4CAF50;
+      color: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+  </style>
+  
+  <!-- For automatic popup disappearance -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const popup = document.getElementById('success-popup');
+      if (popup) {
+        setTimeout(() => {
+          popup.style.display = 'none';
+        }, 5000);  // Hide after 5 seconds
+      }
+    });
+  </script>
+{% endblock %}
