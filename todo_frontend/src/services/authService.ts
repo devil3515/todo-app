@@ -14,6 +14,7 @@ export interface RegisterData {
 
 export interface AuthResponse {
   token: string;
+  key?: string;
   user: {
     id: number;
     username: string;
