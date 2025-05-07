@@ -12,4 +12,5 @@ tzdata==2025.2
 gunicorn
 uvicorn
 python-decouple
+django-environ
 # uvicorn todo_backend.asgi:application --host 0.0.0.0 --port 8000
