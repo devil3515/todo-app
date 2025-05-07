@@ -185,6 +185,6 @@ REST_FRAMEWORK = {
     ]
 }
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",  # Your React app's address
+    "https://todo-app-snakescript.onrender.com",  # Your React app's address
 ]
 CORS_ALLOW_CREDENTIALS = True
