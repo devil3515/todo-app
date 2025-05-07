@@ -3,6 +3,10 @@
 
 A full-stack task management application built with Django REST Framework, PostgreSQL, and a modern React + TypeScript frontend.
 
+## Links
+
+- **Live App**: [https://todo-app-snakescript.onrender.com](https://todo-app-snakescript.onrender.com)
+
 ## 🚀 Features
 
 - ✅ User authentication (Register/Login/Logout)
@@ -83,6 +87,57 @@ uvicorn todo_backend.asgi:application --host 0.0.0.0 --port 8000
 
 ---
 
+### 📦  Set Up the Database
+
+#### Configure the Database
+
+In the `backend/settings.py` file, configure your database settings under the `DATABASES` section. For PostgreSQL, the configuration should look like this:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST', default='localhost'),
+        'PORT': env('DB_PORT', default='5432'),
+    }
+}
+```
+
+If you are using PostgreSQL, ensure the database exists:
+
+```bash
+psql -U postgres
+CREATE DATABASE your_database_name;
+```
+
+#### Create a `.env` File
+
+In the root of your project (the same directory as `manage.py`), create a `.env` file with the following content:
+
+```
+DB_NAME=your_database_name
+DB_USER=your_database_user
+DB_PASSWORD=your_database_password
+DB_HOST=localhost
+DB_PORT=5432
+SECRET_KEY=your_secret_key
+DEBUG=True
+```
+
+Make sure to replace the placeholders (`your_database_name`, `your_database_user`, etc.) with your actual values.
+
+#### Run Migrations
+
+Apply database migrations:
+
+```bash
+python manage.py migrate
+```
+
+
 ### 🎨 Frontend Setup
 
 1. **Navigate to frontend:**
@@ -159,12 +214,6 @@ Check `.env.example` in both `backend/` and `frontend/` for required keys and to
 3. Commit your changes: `git commit -m 'Add some AmazingFeature'`  
 4. Push to the branch: `git push origin feature/AmazingFeature`  
 5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
 
 ---
 
